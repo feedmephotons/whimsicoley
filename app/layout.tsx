@@ -3,6 +3,7 @@ import { Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

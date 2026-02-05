@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FAQ from "@/components/FAQ";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -211,6 +212,19 @@ export default function ContactPage() {
               </button>
             </form>
           </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-cream mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-cream-muted max-w-xl mx-auto">
+              Find quick answers to common questions about orders, shipping, and custom pieces.
+            </p>
+          </div>
+          <FAQ />
         </div>
       </div>
     </div>

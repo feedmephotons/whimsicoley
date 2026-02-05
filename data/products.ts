@@ -11,6 +11,7 @@ export const products: Product[] = [
     category: "jewelry",
     image: "/products/clay_pendant_moon.png",
     featured: true,
+    isNew: true,
   },
   {
     id: "2",
@@ -21,6 +22,7 @@ export const products: Product[] = [
     category: "jewelry",
     image: "/products/wire_wrapped_crystal.png",
     featured: true,
+    isPopular: true,
   },
   {
     id: "3",
@@ -30,6 +32,7 @@ export const products: Product[] = [
     price: 28,
     category: "jewelry",
     image: "/products/beaded_bracelet_amethyst.png",
+    isPopular: true,
   },
   {
     id: "4",
@@ -40,6 +43,7 @@ export const products: Product[] = [
     category: "jewelry",
     image: "/products/beaded_necklace_layered.png",
     featured: true,
+    isNew: true,
   },
   {
     id: "5",
@@ -48,6 +52,7 @@ export const products: Product[] = [
     description: "Adjustable wire-wrapped ring with a stunning gemstone center",
     price: 32,
     category: "jewelry",
+    isNew: true,
     image: "/products/wire_wrapped_ring.png",
   },
   {
