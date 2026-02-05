@@ -73,7 +73,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-cream hover:text-gold transition-colors font-medium"
+                  className="text-cream hover:text-gold transition-colors font-medium link-animated"
                 >
                   {link.label}
                 </Link>
@@ -85,7 +85,7 @@ export default function Header() {
               {/* Search */}
               <button
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="text-cream hover:text-gold transition-colors p-2"
+                className="text-cream hover:text-gold transition-colors p-2 icon-bounce"
                 aria-label="Search"
               >
                 <svg
@@ -106,7 +106,7 @@ export default function Header() {
               {/* Wishlist */}
               <Link
                 href="/wishlist"
-                className="text-cream hover:text-gold transition-colors p-2 relative"
+                className="text-cream hover:text-gold transition-colors p-2 relative icon-bounce"
                 aria-label="Wishlist"
               >
                 <svg
@@ -132,7 +132,7 @@ export default function Header() {
               {/* Custom Order CTA - Desktop */}
               <Link
                 href="/contact"
-                className="hidden md:inline-block btn-gold text-sm py-2 px-4"
+                className="hidden md:inline-block btn-gold btn-ripple text-sm py-2 px-4"
               >
                 Custom Order
               </Link>
@@ -171,7 +171,7 @@ export default function Header() {
 
           {/* Search Bar - Expandable */}
           {isSearchOpen && (
-            <form onSubmit={handleSearch} className="mt-4 pb-2">
+            <form onSubmit={handleSearch} className="mt-4 pb-2 animate-fade-in">
               <div className="relative">
                 <input
                   type="text"
@@ -205,7 +205,7 @@ export default function Header() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <nav className="md:hidden py-4 border-t border-gold/20 mt-4">
+            <nav className="md:hidden py-4 border-t border-gold/20 mt-4 animate-fade-in">
               <div className="flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <Link

@@ -206,7 +206,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn-gold disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full btn-gold btn-ripple disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>

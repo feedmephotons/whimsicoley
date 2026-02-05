@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { useWishlist } from "@/hooks/useWishlist";
 
 export interface Product {
@@ -26,17 +27,20 @@ interface ProductCardProps {
 export default function ProductCard({ product, showWishlistButton = true }: ProductCardProps) {
   const { isInWishlist, toggleWishlist } = useWishlist();
   const isWishlisted = isInWishlist(product.id);
+  const [heartAnimate, setHeartAnimate] = useState(false);
 
   const handleWishlistClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     toggleWishlist(product.id);
+    setHeartAnimate(true);
+    setTimeout(() => setHeartAnimate(false), 400);
   };
 
   return (
     <div className="group relative">
       <Link href={`/shop/${product.slug}`}>
-        <div className="card overflow-hidden">
+        <div className="card card-lift overflow-hidden">
           <div className="relative aspect-square overflow-hidden">
             <Image
               src={product.image}
@@ -89,15 +93,15 @@ export default function ProductCard({ product, showWishlistButton = true }: Prod
       {showWishlistButton && (
         <button
           onClick={handleWishlistClick}
-          className={`absolute top-3 right-3 p-2 rounded-full transition-all duration-300 z-10 ${
+          className={`absolute top-3 right-3 p-2 rounded-full transition-all duration-300 z-10 icon-bounce ${
             isWishlisted
-              ? "bg-gold text-purple-dark"
+              ? "bg-gold text-purple-dark glow-attention"
               : "bg-purple-dark/50 text-cream hover:bg-gold hover:text-purple-dark"
           }`}
           aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
         >
           <svg
-            className="w-5 h-5"
+            className={`w-5 h-5 ${heartAnimate ? "heart-animate" : ""}`}
             fill={isWishlisted ? "currentColor" : "none"}
             stroke="currentColor"
             viewBox="0 0 24 24"

@@ -31,7 +31,7 @@ export default function Footer() {
               <div className="flex gap-4">
                 <a
                   href="#"
-                  className="text-cream-muted hover:text-gold transition-colors"
+                  className="text-cream-muted hover:text-gold transition-colors icon-bounce"
                   aria-label="Instagram"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -40,7 +40,7 @@ export default function Footer() {
                 </a>
                 <a
                   href="#"
-                  className="text-cream-muted hover:text-gold transition-colors"
+                  className="text-cream-muted hover:text-gold transition-colors icon-bounce"
                   aria-label="Pinterest"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -49,7 +49,7 @@ export default function Footer() {
                 </a>
                 <a
                   href="#"
-                  className="text-cream-muted hover:text-gold transition-colors"
+                  className="text-cream-muted hover:text-gold transition-colors icon-bounce"
                   aria-label="TikTok"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -64,27 +64,27 @@ export default function Footer() {
               <h3 className="text-gold font-semibold mb-4">Shop</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/shop" className="text-cream-muted hover:text-gold transition-colors text-sm">
+                  <Link href="/shop" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
                     All Products
                   </Link>
                 </li>
                 <li>
-                  <Link href="/shop?category=jewelry" className="text-cream-muted hover:text-gold transition-colors text-sm">
+                  <Link href="/shop?category=jewelry" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
                     Jewelry
                   </Link>
                 </li>
                 <li>
-                  <Link href="/shop?category=suncatchers" className="text-cream-muted hover:text-gold transition-colors text-sm">
+                  <Link href="/shop?category=suncatchers" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
                     Suncatchers
                   </Link>
                 </li>
                 <li>
-                  <Link href="/shop?category=home-decor" className="text-cream-muted hover:text-gold transition-colors text-sm">
+                  <Link href="/shop?category=home-decor" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
                     Home Decor
                   </Link>
                 </li>
                 <li>
-                  <Link href="/shop?category=seasonal" className="text-cream-muted hover:text-gold transition-colors text-sm">
+                  <Link href="/shop?category=seasonal" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
                     Seasonal
                   </Link>
                 </li>
@@ -96,27 +96,27 @@ export default function Footer() {
               <h3 className="text-gold font-semibold mb-4">Support</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/about" className="text-cream-muted hover:text-gold transition-colors text-sm">
+                  <Link href="/about" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
                     About Nicole
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-cream-muted hover:text-gold transition-colors text-sm">
+                  <Link href="/contact" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-cream-muted hover:text-gold transition-colors text-sm">
+                  <Link href="/contact" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
                     Custom Orders
                   </Link>
                 </li>
                 <li>
-                  <Link href="/wishlist" className="text-cream-muted hover:text-gold transition-colors text-sm">
+                  <Link href="/wishlist" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
                     Wishlist
                   </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-cream-muted hover:text-gold transition-colors text-sm">
+                  <a href="#" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
                     Etsy Shop (Coming Soon)
                   </a>
                 </li>

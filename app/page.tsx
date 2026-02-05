@@ -62,10 +62,10 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/shop" className="btn-gold text-lg animate-pulse-glow">
+            <Link href="/shop" className="btn-gold btn-ripple text-lg animate-pulse-glow">
               Explore Collection
             </Link>
-            <Link href="/contact" className="btn-outline text-lg">
+            <Link href="/contact" className="btn-outline btn-ripple text-lg">
               Custom Orders
             </Link>
           </div>
