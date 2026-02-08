@@ -25,7 +25,7 @@ export default function WishlistPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-cream mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-cream mb-4">
             Your Wishlist
           </h1>
           <p className="text-cream-muted max-w-xl mx-auto">
@@ -56,7 +56,7 @@ export default function WishlistPage() {
           </>
         ) : (
           <div className="text-center py-16">
-            <div className="text-6xl mb-6">💫</div>
+            <div className="text-6xl mb-6 text-gold">&#9790;</div>
             <h2 className="text-2xl text-cream mb-4">Your wishlist is empty</h2>
             <p className="text-cream-muted mb-8">
               Browse our collection and click the heart icon to save your favorite pieces.

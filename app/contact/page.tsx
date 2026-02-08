@@ -39,8 +39,8 @@ export default function ContactPage() {
       <div className="cosmic-bg min-h-screen pt-28 pb-20">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="card p-12">
-            <span className="text-6xl mb-6 block">✨</span>
-            <h1 className="font-[family-name:var(--font-playfair)] text-3xl text-cream mb-4">
+            <span className="text-6xl mb-6 block text-gold">&#9734;</span>
+            <h1 className="font-[family-name:var(--font-display)] text-3xl text-cream mb-4">
               Message Sent!
             </h1>
             <p className="text-cream-muted mb-6">
@@ -62,21 +62,21 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div>
-            <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-cream mb-6">
+            <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-cream mb-6">
               Get in Touch
             </h1>
             <p className="text-cream-muted text-lg mb-8">
-              Have a question about a product? Want to request a custom order?
-              I&apos;d love to hear from you!
+              Have a question or a vision for something special?
+              I&apos;d love to hear from you.
             </p>
 
             <div className="space-y-6 mb-12">
               <div className="card p-6">
                 <h3 className="text-gold font-semibold mb-2">Custom Orders</h3>
                 <p className="text-cream-muted text-sm">
-                  Looking for something special? I love creating custom pieces!
-                  Let me know your ideas, preferred colors, materials, and budget,
-                  and we&apos;ll create something magical together.
+                  Have something special in mind? Share your vision &mdash; preferred
+                  colors, materials, and inspiration &mdash; and we&apos;ll craft
+                  something truly yours.
                 </p>
               </div>
 
@@ -133,7 +133,7 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="card p-8">
-            <h2 className="font-[family-name:var(--font-playfair)] text-2xl text-cream mb-6">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl text-cream mb-6">
               Send a Message
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -148,7 +148,7 @@ export default function ContactPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-purple-dark/50 border border-gold/30 rounded-lg text-cream placeholder-cream-muted/50 focus:outline-none focus:border-gold transition-colors"
+                  className="w-full px-4 py-3 bg-navy-dark/50 border border-gold/30 rounded-lg text-cream placeholder-cream-muted/50 focus:outline-none focus:border-gold transition-colors"
                   placeholder="Jane Doe"
                 />
               </div>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-purple-dark/50 border border-gold/30 rounded-lg text-cream placeholder-cream-muted/50 focus:outline-none focus:border-gold transition-colors"
+                  className="w-full px-4 py-3 bg-navy-dark/50 border border-gold/30 rounded-lg text-cream placeholder-cream-muted/50 focus:outline-none focus:border-gold transition-colors"
                   placeholder="jane@example.com"
                 />
               </div>
@@ -178,7 +178,7 @@ export default function ContactPage() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-purple-dark/50 border border-gold/30 rounded-lg text-cream focus:outline-none focus:border-gold transition-colors"
+                  className="w-full px-4 py-3 bg-navy-dark/50 border border-gold/30 rounded-lg text-cream focus:outline-none focus:border-gold transition-colors"
                 >
                   <option value="general">General Inquiry</option>
                   <option value="custom">Custom Order Request</option>
@@ -198,7 +198,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-purple-dark/50 border border-gold/30 rounded-lg text-cream placeholder-cream-muted/50 focus:outline-none focus:border-gold transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-navy-dark/50 border border-gold/30 rounded-lg text-cream placeholder-cream-muted/50 focus:outline-none focus:border-gold transition-colors resize-none"
                   placeholder="Tell me about what you're looking for..."
                 />
               </div>
@@ -217,7 +217,7 @@ export default function ContactPage() {
         {/* FAQ Section */}
         <div className="mt-20">
           <div className="text-center mb-12">
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-cream mb-4">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl text-cream mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-cream-muted max-w-xl mx-auto">

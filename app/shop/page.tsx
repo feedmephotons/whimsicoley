@@ -110,7 +110,7 @@ function ShopContent() {
               id="sort"
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="bg-purple-dark/50 border border-gold/30 rounded-lg px-3 py-2 text-cream text-sm focus:outline-none focus:border-gold transition-colors"
+              className="bg-navy-dark/50 border border-gold/30 rounded-lg px-3 py-2 text-cream text-sm focus:outline-none focus:border-gold transition-colors"
             >
               <option value="featured">Featured</option>
               <option value="newest">Newest</option>
@@ -170,12 +170,12 @@ export default function ShopPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-cream mb-4">
-            Shop All Treasures
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-cream mb-4">
+            Our Collection
           </h1>
           <p className="text-cream-muted max-w-xl mx-auto">
-            Browse our collection of handcrafted celestial wonders. Each piece is
-            made with love and a sprinkle of stardust.
+            Browse our handcrafted creations. Each piece is made with care,
+            attention to detail, and a love for the craft.
           </p>
         </div>
 

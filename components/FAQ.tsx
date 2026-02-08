@@ -14,7 +14,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What materials do you use?",
-    answer: "I use high-quality materials including genuine crystals, semi-precious stones, sterling silver and gold-filled wire, polymer clay, and premium resin. Each piece is crafted to last while maintaining its sparkle.",
+    answer: "I use high-quality materials including genuine crystals, semi-precious stones, sterling silver and gold-filled wire, polymer clay, and premium resin. Each piece is crafted to last while maintaining its beauty.",
   },
   {
     question: "How long does shipping take?",

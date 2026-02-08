@@ -21,12 +21,12 @@ export default function Newsletter() {
   if (isSubmitted) {
     return (
       <div className="text-center py-8">
-        <div className="text-4xl mb-4">✨</div>
+        <div className="text-4xl mb-4 text-gold">&#9790;</div>
         <h3 className="text-xl font-semibold text-cream mb-2">
           You&apos;re on the list!
         </h3>
         <p className="text-cream-muted">
-          Thanks for subscribing! Keep an eye on your inbox for sparkly updates.
+          Thank you for joining us! Look for enchanting updates in your inbox soon.
         </p>
       </div>
     );
@@ -34,8 +34,8 @@ export default function Newsletter() {
 
   return (
     <div className="text-center">
-      <h3 className="font-[family-name:var(--font-playfair)] text-2xl text-cream mb-3">
-        Join the Sparkle Squad
+      <h3 className="font-[family-name:var(--font-display)] text-2xl text-cream mb-3">
+        Join Our Inner Circle
       </h3>
       <p className="text-cream-muted mb-6 max-w-md mx-auto">
         Subscribe for exclusive updates, new product drops, and special offers delivered to your inbox.
@@ -47,18 +47,18 @@ export default function Newsletter() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
           required
-          className="flex-1 px-4 py-3 bg-purple-dark/50 border border-gold/30 rounded-full text-cream placeholder-cream-muted/50 focus:outline-none focus:border-gold transition-colors"
+          className="flex-1 px-4 py-3 bg-navy-dark/50 border border-gold/30 rounded-lg text-cream placeholder-cream-muted/50 focus:outline-none focus:border-gold transition-colors"
         />
         <button
           type="submit"
           disabled={isLoading}
           className="btn-gold whitespace-nowrap disabled:opacity-50"
         >
-          {isLoading ? "..." : "Subscribe ✨"}
+          {isLoading ? "..." : "Subscribe"}
         </button>
       </form>
       <p className="text-cream-muted/60 text-xs mt-4">
-        No spam, just sparkles. Unsubscribe anytime.
+        No noise, just magic. Unsubscribe anytime.
       </p>
     </div>
   );

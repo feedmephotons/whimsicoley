@@ -26,10 +26,10 @@ export default function SparkleCanvas() {
     if (!ctx) return;
 
     const colors = [
-      "rgba(212, 175, 55, 1)",    // Gold
-      "rgba(255, 215, 0, 1)",     // Bright gold
+      "rgba(201, 169, 78, 1)",    // Antique gold
+      "rgba(212, 182, 106, 1)",   // Light gold
       "rgba(255, 255, 255, 1)",   // White
-      "rgba(232, 213, 163, 1)",   // Cream
+      "rgba(245, 236, 215, 1)",   // Cream
     ];
 
     const resizeCanvas = () => {
@@ -44,18 +44,18 @@ export default function SparkleCanvas() {
       return {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 1,
-        speedX: (Math.random() - 0.5) * 0.5,
-        speedY: (Math.random() - 0.5) * 0.5,
-        opacity: Math.random(),
-        opacitySpeed: (Math.random() * 0.02) + 0.005,
+        size: Math.random() * 2 + 0.5,
+        speedX: (Math.random() - 0.5) * 0.15,
+        speedY: (Math.random() - 0.5) * 0.15,
+        opacity: Math.random() * 0.6,
+        opacitySpeed: (Math.random() * 0.008) + 0.002,
         color: colors[Math.floor(Math.random() * colors.length)],
       };
     };
 
     const initParticles = () => {
-      const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
-      particlesRef.current = Array.from({ length: Math.min(particleCount, 100) }, createParticle);
+      const particleCount = Math.floor((canvas.width * canvas.height) / 25000);
+      particlesRef.current = Array.from({ length: Math.min(particleCount, 40) }, createParticle);
     };
 
     const drawStar = (x: number, y: number, size: number, opacity: number, color: string) => {
@@ -64,30 +64,9 @@ export default function SparkleCanvas() {
       ctx.fillStyle = color;
       ctx.beginPath();
 
-      // Draw a 4-pointed star
-      const spikes = 4;
-      const outerRadius = size;
-      const innerRadius = size * 0.4;
-
-      for (let i = 0; i < spikes * 2; i++) {
-        const radius = i % 2 === 0 ? outerRadius : innerRadius;
-        const angle = (i * Math.PI) / spikes - Math.PI / 2;
-        const px = x + Math.cos(angle) * radius;
-        const py = y + Math.sin(angle) * radius;
-
-        if (i === 0) {
-          ctx.moveTo(px, py);
-        } else {
-          ctx.lineTo(px, py);
-        }
-      }
-
+      // Draw a simple circle dot for gentle starfield
+      ctx.arc(x, y, size, 0, Math.PI * 2);
       ctx.closePath();
-      ctx.fill();
-
-      // Add glow effect
-      ctx.shadowBlur = size * 3;
-      ctx.shadowColor = color;
       ctx.fill();
 
       ctx.restore();
@@ -103,7 +82,7 @@ export default function SparkleCanvas() {
 
         // Update opacity (twinkling)
         particle.opacity += particle.opacitySpeed;
-        if (particle.opacity >= 1 || particle.opacity <= 0) {
+        if (particle.opacity >= 0.7 || particle.opacity <= 0) {
           particle.opacitySpeed *= -1;
         }
 
@@ -139,7 +118,7 @@ export default function SparkleCanvas() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 pointer-events-none z-0"
-      style={{ mixBlendMode: "screen" }}
+      style={{ opacity: 0.8 }}
     />
   );
 }

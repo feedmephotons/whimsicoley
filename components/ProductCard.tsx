@@ -48,22 +48,22 @@ export default function ProductCard({ product, showWishlistButton = true }: Prod
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-purple-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
             {/* Badges */}
             <div className="absolute top-3 left-3 flex flex-col gap-2">
               {product.isNew && (
-                <span className="bg-gold text-purple-dark text-xs font-bold px-2 py-1 rounded-full">
+                <span className="bg-gold text-navy-dark text-xs font-bold px-2 py-1 rounded-sm">
                   NEW
                 </span>
               )}
               {product.isPopular && (
-                <span className="bg-purple-mid text-cream text-xs font-bold px-2 py-1 rounded-full">
+                <span className="bg-navy-mid text-cream text-xs font-bold px-2 py-1 rounded-sm">
                   POPULAR
                 </span>
               )}
               {product.featured && !product.isNew && !product.isPopular && (
-                <span className="bg-gold/80 text-purple-dark text-xs font-bold px-2 py-1 rounded-full">
+                <span className="bg-gold/80 text-navy-dark text-xs font-bold px-2 py-1 rounded-sm">
                   FEATURED
                 </span>
               )}
@@ -93,10 +93,10 @@ export default function ProductCard({ product, showWishlistButton = true }: Prod
       {showWishlistButton && (
         <button
           onClick={handleWishlistClick}
-          className={`absolute top-3 right-3 p-2 rounded-full transition-all duration-300 z-10 icon-bounce ${
+          className={`absolute top-3 right-3 p-2 rounded-sm transition-all duration-300 z-10 icon-bounce ${
             isWishlisted
-              ? "bg-gold text-purple-dark glow-attention"
-              : "bg-purple-dark/50 text-cream hover:bg-gold hover:text-purple-dark"
+              ? "bg-gold text-navy-dark glow-attention"
+              : "bg-navy-dark/50 text-cream hover:bg-gold hover:text-navy-dark"
           }`}
           aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
         >

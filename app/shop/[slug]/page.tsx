@@ -82,7 +82,7 @@ export default async function ProductPage({
             <span className="text-gold-light/70 text-sm uppercase tracking-wider">
               {product.category.replace("-", " ")}
             </span>
-            <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-cream mt-2 mb-4">
+            <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl text-cream mt-2 mb-4">
               {product.name}
             </h1>
             <p className="text-gold text-3xl font-bold mb-6">${product.price}</p>
@@ -116,19 +116,19 @@ export default async function ProductPage({
               <h3 className="text-gold font-semibold mb-4">About This Piece</h3>
               <ul className="space-y-3 text-cream-muted text-sm">
                 <li className="flex items-start gap-3">
-                  <span className="text-gold">✨</span>
+                  <span className="text-gold">&#10022;</span>
                   <span>Handmade with love and attention to detail</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-gold">✨</span>
+                  <span className="text-gold">&#10022;</span>
                   <span>Each piece is unique - slight variations make it special</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-gold">✨</span>
+                  <span className="text-gold">&#10022;</span>
                   <span>Quality materials sourced with care</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-gold">✨</span>
+                  <span className="text-gold">&#10022;</span>
                   <span>Custom variations available upon request</span>
                 </li>
               </ul>
@@ -147,7 +147,7 @@ export default async function ProductPage({
                   <span>Arrives in a beautiful gift-ready package</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-gold">💜</span>
+                  <span className="text-gold">&#10022;</span>
                   <span>Store in a dry place away from direct sunlight</span>
                 </li>
               </ul>

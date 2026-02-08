@@ -2,27 +2,43 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useWishlist } from "@/hooks/useWishlist";
+import MegaMenu from "./MegaMenu";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const { wishlistCount } = useWishlist();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
+    // Close megamenu on click outside
+    const handleClickOutside = (event: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setActiveMegaMenu(null);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/shop", label: "Shop" },
+    { href: "/shop", label: "Shop", hasMegaMenu: true },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
@@ -34,54 +50,68 @@ export default function Header() {
     }
   };
 
+  const closeMegaMenu = () => setActiveMegaMenu(null);
+
   return (
     <>
       {/* Announcement Bar */}
-      <div className="bg-gold text-purple-dark text-center py-2 px-4 text-sm font-medium">
-        <span className="animate-pulse inline-block mr-2">✨</span>
-        Custom Orders Now Open! Free shipping on orders over $50
-        <span className="animate-pulse inline-block ml-2">✨</span>
+      <div className="bg-gold text-navy-dark text-center py-2 px-4 text-sm font-medium z-50 relative">
+        <span className="inline-block mr-2">&#9734;</span>
+        Bespoke Creations Now Available &mdash; Complimentary Shipping on Orders Over $50
+        <span className="inline-block ml-2">&#9734;</span>
       </div>
 
       {/* Main Header */}
       <header
-        className={`fixed top-8 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-purple-dark/95 backdrop-blur-md shadow-lg py-2"
-            : "bg-purple-dark/80 backdrop-blur-md py-4"
-        } border-b border-gold/20`}
+        ref={headerRef}
+        className={`fixed top-8 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || activeMegaMenu
+            ? "bg-navy-dark/95 backdrop-blur-md shadow-lg py-2"
+            : "bg-navy-dark/80 backdrop-blur-md py-4"
+          } border-b border-gold/20`}
+        onMouseLeave={closeMegaMenu}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex-shrink-0">
+            <Link href="/" className="flex-shrink-0 z-50" onClick={closeMegaMenu}>
               <Image
                 src="/logo.png"
                 alt="WhimsiColey"
                 width={180}
                 height={54}
-                className={`transition-all duration-300 ${
-                  isScrolled ? "h-10 w-auto" : "h-14 w-auto"
-                }`}
+                className={`transition-all duration-300 ${isScrolled || activeMegaMenu ? "h-10 w-auto" : "h-14 w-auto"
+                  }`}
                 priority
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-8 h-full">
               {navLinks.map((link) => (
-                <Link
+                <div
                   key={link.href}
-                  href={link.href}
-                  className="text-cream hover:text-gold transition-colors font-medium link-animated"
+                  className="relative h-full flex items-center"
+                  onMouseEnter={() => {
+                    if (link.hasMegaMenu) setActiveMegaMenu("shop");
+                    else setActiveMegaMenu(null);
+                  }}
                 >
-                  {link.label}
-                </Link>
+                  <Link
+                    href={link.href}
+                    className={`text-base font-medium transition-all duration-200 link-animated pb-1 ${activeMegaMenu === "shop" && link.hasMegaMenu
+                        ? "text-gold"
+                        : "text-cream hover:text-gold"
+                      }`}
+                    onClick={closeMegaMenu}
+                  >
+                    {link.label}
+                  </Link>
+                </div>
               ))}
             </nav>
 
             {/* Right Side Icons */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 z-50">
               {/* Search */}
               <button
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
@@ -123,18 +153,18 @@ export default function Header() {
                   />
                 </svg>
                 {wishlistCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-gold text-purple-dark text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
+                  <span className="absolute -top-1 -right-1 bg-gold text-navy-dark text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
                     {wishlistCount}
                   </span>
                 )}
               </Link>
 
-              {/* Custom Order CTA - Desktop */}
+              {/* Request a Treasure CTA - Desktop */}
               <Link
                 href="/contact"
-                className="hidden md:inline-block btn-gold btn-ripple text-sm py-2 px-4"
+                className="hidden md:inline-block btn-gold btn-ripple text-sm py-2 px-4 whitespace-nowrap"
               >
-                Custom Order
+                Request a Treasure
               </Link>
 
               {/* Mobile Menu Button */}
@@ -178,7 +208,7 @@ export default function Header() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search for treasures..."
-                  className="w-full px-4 py-2 bg-purple-dark/50 border border-gold/30 rounded-full text-cream placeholder-cream-muted/50 focus:outline-none focus:border-gold transition-colors"
+                  className="w-full px-4 py-2 bg-navy-dark/50 border border-gold/30 rounded-full text-cream placeholder-cream-muted/50 focus:outline-none focus:border-gold transition-colors"
                   autoFocus
                 />
                 <button
@@ -203,9 +233,16 @@ export default function Header() {
             </form>
           )}
 
+          {/* Megamenu */}
+          <MegaMenu
+            isOpen={activeMegaMenu === "shop"}
+            onClose={closeMegaMenu}
+            activeItem={activeMegaMenu}
+          />
+
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <nav className="md:hidden py-4 border-t border-gold/20 mt-4 animate-fade-in">
+            <nav className="md:hidden py-4 border-t border-gold/20 mt-4 animate-fade-in relative z-40 bg-navy-dark">
               <div className="flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <Link
@@ -217,6 +254,9 @@ export default function Header() {
                     {link.label}
                   </Link>
                 ))}
+
+                {/* Mobile Collections Submenu could go here if needed, keeping it simple for now */}
+
                 <Link
                   href="/wishlist"
                   className="text-cream hover:text-gold transition-colors font-medium py-2 flex items-center gap-2"
@@ -224,7 +264,7 @@ export default function Header() {
                 >
                   Wishlist
                   {wishlistCount > 0 && (
-                    <span className="bg-gold text-purple-dark text-xs px-2 py-0.5 rounded-full">
+                    <span className="bg-gold text-navy-dark text-xs px-2 py-0.5 rounded-full">
                       {wishlistCount}
                     </span>
                   )}
@@ -234,7 +274,7 @@ export default function Header() {
                   className="btn-gold text-sm text-center mt-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Custom Order
+                  Request a Treasure
                 </Link>
               </div>
             </nav>
@@ -243,7 +283,7 @@ export default function Header() {
       </header>
 
       {/* Spacer for fixed header + announcement */}
-      <div className="h-8" />
+      <div className="h-20" />
     </>
   );
 }

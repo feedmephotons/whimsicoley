@@ -4,7 +4,7 @@ import Newsletter from "./Newsletter";
 
 export default function Footer() {
   return (
-    <footer className="bg-purple-dark border-t border-gold/20">
+    <footer className="bg-navy-dark border-t border-gold/20">
       {/* Newsletter Section */}
       <div className="section-cosmic py-16 px-4 sm:px-6 lg:px-8">
         <Newsletter />
@@ -24,8 +24,8 @@ export default function Footer() {
                 className="h-12 w-auto mb-4"
               />
               <p className="text-cream-muted text-sm max-w-md mb-4">
-                Handcrafted celestial wonders to illuminate your day. Each piece is
-                made with love and a sprinkle of magic.
+                Handcrafted treasures for dreamers and stargazers. Each piece is
+                made with love, intention, and timeless care.
               </p>
               {/* Social Links */}
               <div className="flex gap-4">
@@ -133,7 +133,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} WhimsiColey. All rights reserved.
           </p>
           <p className="text-cream-muted/60 text-xs flex items-center gap-2">
-            Made with <span className="text-gold">✨</span> and love
+            Made with <span className="text-gold">&#9790;</span> care and a touch of moonlight
           </p>
         </div>
       </div>

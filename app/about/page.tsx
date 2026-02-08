@@ -22,11 +22,11 @@ export default function AboutPage() {
 
           {/* Content */}
           <div className="order-1 md:order-2">
-            <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-cream mb-6">
+            <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-cream mb-6">
               Meet the Maker
             </h1>
             <p className="text-cream-muted text-lg mb-6">
-              Hi, I&apos;m Nicole! Welcome to my little corner of sparkly magic.
+              Hi, I&apos;m Nicole! Welcome to my workshop of handcrafted wonders.
             </p>
             <p className="text-cream-muted mb-4">
               I&apos;ve always been drawn to beautiful, whimsical things &ndash; the way
@@ -42,7 +42,7 @@ export default function AboutPage() {
 
         {/* Story Section */}
         <div className="max-w-3xl mx-auto text-center mb-20">
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-cream mb-8">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl text-cream mb-8">
             The WhimsiColey Story
           </h2>
           <div className="space-y-6 text-cream-muted">
@@ -63,15 +63,15 @@ export default function AboutPage() {
             <p>
               The name &quot;WhimsiColey&quot; is a blend of &quot;whimsical&quot; and my name,
               Nicole. It represents exactly what I hope to bring to your life
-              &ndash; a touch of whimsy, a sprinkle of sparkle, and a whole lot of
-              personality.
+              &ndash; a touch of whimsy, a sense of wonder, and a whole lot of
+              heart.
             </p>
           </div>
         </div>
 
         {/* What I Create Section */}
         <div className="mb-20">
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-cream text-center mb-12">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl text-cream text-center mb-12">
             What I Create
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -80,25 +80,25 @@ export default function AboutPage() {
                 title: "Jewelry",
                 description:
                   "Wire-wrapped pendants, beaded bracelets, clay earrings, and more. Each piece designed to make you feel special.",
-                icon: "💎",
+                icon: "☾",
               },
               {
                 title: "Suncatchers",
                 description:
                   "Crystal prisms and beaded beauties that dance with light and fill your space with rainbows.",
-                icon: "🌙",
+                icon: "☆",
               },
               {
                 title: "Home Decor",
                 description:
                   "Resin coasters, trinket dishes, and decorative pieces that add magic to your everyday spaces.",
-                icon: "✨",
+                icon: "❁",
               },
               {
                 title: "Seasonal Items",
                 description:
                   "Special collections for holidays and seasons, from spooky Halloween to cozy Christmas.",
-                icon: "🎃",
+                icon: "☘",
               },
             ].map((item) => (
               <div key={item.title} className="card p-6 text-center">
@@ -112,7 +112,7 @@ export default function AboutPage() {
 
         {/* Values Section */}
         <div className="max-w-4xl mx-auto mb-20">
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-cream text-center mb-12">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl text-cream text-center mb-12">
             My Promise to You
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -143,7 +143,7 @@ export default function AboutPage() {
 
         {/* CTA Section */}
         <div className="text-center card p-12 max-w-2xl mx-auto">
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl text-cream mb-4">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl text-cream mb-4">
             Let&apos;s Create Something Together
           </h2>
           <p className="text-cream-muted mb-6">

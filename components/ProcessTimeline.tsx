@@ -4,25 +4,25 @@ export default function ProcessTimeline() {
       number: "01",
       title: "Share Your Vision",
       description: "Tell me about your dream piece! Send photos, describe colors, and share any inspiration.",
-      icon: "💭",
+      icon: "\u270E",
     },
     {
       number: "02",
       title: "Design & Quote",
       description: "I'll create a design concept and provide a quote within 24-48 hours.",
-      icon: "✏️",
+      icon: "\u2727",
     },
     {
       number: "03",
-      title: "Crafting Magic",
+      title: "Crafting Your Treasure",
       description: "Once approved, I'll handcraft your piece with love and attention to every detail.",
-      icon: "✨",
+      icon: "\u2726",
     },
     {
       number: "04",
       title: "Delivered to You",
       description: "Your treasure arrives beautifully packaged, ready to wear or gift!",
-      icon: "🎁",
+      icon: "\u2736",
     },
   ];
 
