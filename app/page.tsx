@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="section-cosmic relative min-h-screen flex items-center justify-center">
+      <section className="section-cosmic relative flex items-center justify-center" style={{ minHeight: 'calc(100vh - 100px)' }}>
         <SparkleCanvas />
         <ParallaxElements />
 
