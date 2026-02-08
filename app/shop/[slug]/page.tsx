@@ -42,7 +42,7 @@ export default async function ProductPage({
   }
 
   return (
-    <div className="cosmic-bg min-h-screen pt-28 pb-20">
+    <div className="cosmic-bg min-h-screen pt-12 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="mb-8">

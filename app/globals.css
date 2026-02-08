@@ -71,54 +71,116 @@ body {
   color: var(--cream);
 }
 
-/* Light parchment section */
+/* White section with decorative moon background */
 .section-light {
-  background: var(--cream);
-  background-image: url('/textures/parchment.png');
-  background-size: cover;
-  background-position: center;
+  background: #FFFFFF;
   color: var(--navy-dark);
   position: relative;
+  overflow: hidden;
+}
+
+.section-light::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -100px;
+  right: -150px;
+  background: radial-gradient(circle, rgba(201,169,78,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.section-light::after {
+  content: '☾';
+  position: absolute;
+  font-size: 20rem;
+  top: 50%;
+  right: -2rem;
+  transform: translateY(-50%);
+  color: rgba(201,169,78,0.04);
+  pointer-events: none;
+  line-height: 1;
 }
 
 .section-light .text-cream { color: var(--navy-dark); }
 .section-light .text-cream-muted { color: var(--navy-mid); }
 .section-light .text-gold { color: var(--gold); }
 
-/* Warm linen section */
+/* White section with decorative star background */
 .section-lavender {
-  background: #F0EDE4;
-  background-image: url('/textures/warm-linen.png');
-  background-size: cover;
-  background-position: center;
+  background: #FFFFFF;
   color: var(--navy-dark);
   position: relative;
+  overflow: hidden;
+}
+
+.section-lavender::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  bottom: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(201,169,78,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.section-lavender::after {
+  content: '✦';
+  position: absolute;
+  font-size: 25rem;
+  top: 50%;
+  left: -3rem;
+  transform: translateY(-50%);
+  color: rgba(201,169,78,0.035);
+  pointer-events: none;
+  line-height: 1;
 }
 
 .section-lavender .text-cream { color: var(--navy-dark); }
 .section-lavender .text-cream-muted { color: var(--navy-mid); }
 
-/* Antique marble section */
+/* White marble section */
 .section-marble {
-  background: #FAFAFA;
-  background-image: url('/textures/antique-marble.png');
-  background-size: cover;
-  background-position: center;
+  background: #FFFFFF;
   color: var(--navy-dark);
   position: relative;
+  overflow: hidden;
+}
+
+.section-marble::after {
+  content: '❁';
+  position: absolute;
+  font-size: 18rem;
+  bottom: -2rem;
+  right: 5%;
+  color: rgba(201,169,78,0.04);
+  pointer-events: none;
+  line-height: 1;
 }
 
 .section-marble .text-cream { color: var(--navy-dark); }
 .section-marble .text-cream-muted { color: #666; }
 
-/* Soft clouds section */
+/* White clouds section */
 .section-clouds {
-  background: var(--cream);
-  background-image: url('/textures/soft-clouds.png');
-  background-size: cover;
-  background-position: center;
+  background: #FFFFFF;
   color: var(--navy-dark);
   position: relative;
+  overflow: hidden;
+}
+
+.section-clouds::after {
+  content: '☆';
+  position: absolute;
+  font-size: 22rem;
+  top: -3rem;
+  left: 10%;
+  color: rgba(201,169,78,0.035);
+  pointer-events: none;
+  line-height: 1;
 }
 
 .section-clouds .text-cream { color: var(--navy-dark); }

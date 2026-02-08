@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="section-cosmic relative min-h-screen flex items-center justify-center pt-20">
+      <section className="section-cosmic relative min-h-screen flex items-center justify-center">
         <SparkleCanvas />
         <ParallaxElements />
 
@@ -123,9 +123,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gradient Transition */}
-      <div className="gradient-dark-to-light" />
-
       {/* Featured Products Section */}
       <section className="section-light py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -154,9 +151,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Gradient Transition */}
-      <div className="gradient-light-to-dark" />
 
       {/* About Preview Section */}
       <section className="section-dark py-20 px-4 sm:px-6 lg:px-8">
@@ -198,9 +192,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gradient Transition */}
-      <div className="gradient-dark-to-lavender" />
-
       {/* Categories Section */}
       <section className="section-lavender py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -236,9 +227,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gradient Transition */}
-      <div className="gradient-lavender-to-dark" />
-
       {/* Testimonials Section */}
       <section className="section-dark py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto relative z-10">
@@ -254,9 +242,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gradient Transition */}
-      <div className="gradient-dark-to-light" />
-
       {/* Process Timeline Section */}
       <section className="section-light py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -271,9 +256,6 @@ export default function Home() {
           <ProcessTimeline />
         </div>
       </section>
-
-      {/* Gradient Transition */}
-      <div className="gradient-light-to-dark" />
 
       {/* CTA Section */}
       <section className="section-cosmic py-20 px-4 sm:px-6 lg:px-8">

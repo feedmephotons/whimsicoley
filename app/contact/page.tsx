@@ -36,7 +36,7 @@ export default function ContactPage() {
 
   if (isSubmitted) {
     return (
-      <div className="cosmic-bg min-h-screen pt-28 pb-20">
+      <div className="cosmic-bg min-h-screen pt-12 pb-20">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="card p-12">
             <span className="text-6xl mb-6 block text-gold">&#9734;</span>
@@ -57,7 +57,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="cosmic-bg min-h-screen pt-28 pb-20">
+    <div className="cosmic-bg min-h-screen pt-12 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}

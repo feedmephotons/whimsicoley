@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="cosmic-bg min-h-screen pt-28 pb-20">
+    <div className="cosmic-bg min-h-screen pt-12 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">

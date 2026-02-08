@@ -54,8 +54,8 @@ export default function Header() {
 
   return (
     <>
-      {/* Announcement Bar */}
-      <div className="bg-gold text-navy-dark text-center py-2 px-4 text-sm font-medium z-50 relative">
+      {/* Announcement Bar - scrolls away naturally */}
+      <div className="bg-gold text-navy-dark text-center py-2 px-4 text-sm font-medium relative">
         <span className="inline-block mr-2">&#9734;</span>
         Bespoke Creations Now Available &mdash; Complimentary Shipping on Orders Over $50
         <span className="inline-block ml-2">&#9734;</span>
@@ -64,9 +64,9 @@ export default function Header() {
       {/* Main Header */}
       <header
         ref={headerRef}
-        className={`fixed top-8 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || activeMegaMenu
-            ? "bg-navy-dark/95 backdrop-blur-md shadow-lg py-2"
-            : "bg-navy-dark/80 backdrop-blur-md py-4"
+        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || activeMegaMenu
+            ? "bg-navy-dark/85 backdrop-blur-xl shadow-lg py-2"
+            : "bg-navy-dark/70 backdrop-blur-lg py-4"
           } border-b border-gold/20`}
         onMouseLeave={closeMegaMenu}
       >
@@ -282,8 +282,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Spacer for fixed header + announcement */}
-      <div className="h-20" />
     </>
   );
 }
