@@ -101,7 +101,7 @@ export default function Home() {
 
           {/* Tagline */}
           <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl lg:text-6xl text-cream mb-6 text-shadow-glow">
-            Handcrafted Treasures for Dreamers and Stargazers
+            Handcrafted Treasures for Dreamers and Stargazers ☾
           </h1>
           <p className="text-cream-muted text-lg md:text-xl max-w-2xl mx-auto mb-10">
             Timeless, nature-inspired creations made with love and intention
