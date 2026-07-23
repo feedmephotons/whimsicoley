@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# --- generation tooling (contain API keys) & work artifacts ---
+*.py
+__pycache__/
+*.zip
+*:Zone.Identifier
+facebook-photos/
+product-settings/
+product-images-test/
+.playwright-mcp/
+# local screenshots
+about-full.png
+contact-full.png
+homepage-full.png
+homepage-updated.png
+product-detail-full.png
+*-full.png

@@ -35,8 +35,17 @@
 body {
   background: var(--navy-dark);
   color: var(--cream);
-  font-family: 'Lora', serif;
+  font-family: var(--font-body), Georgia, 'Times New Roman', serif;
   min-height: 100vh;
+}
+
+/* Reusable font utilities — never rely on a literal Google family name
+   (next/font self-hosts under a hashed name; the plain names never register). */
+.font-display {
+  font-family: var(--font-display), Georgia, 'Times New Roman', serif;
+}
+.font-body {
+  font-family: var(--font-body), Georgia, 'Times New Roman', serif;
 }
 
 /* ========================================
@@ -71,9 +80,9 @@ body {
   color: var(--cream);
 }
 
-/* White section with decorative moon background */
+/* Parchment section with decorative moon background */
 .section-light {
-  background: #FFFFFF;
+  background: var(--cream) url('/textures/parchment.png') center/cover;
   color: var(--navy-dark);
   position: relative;
   overflow: hidden;
@@ -107,9 +116,9 @@ body {
 .section-light .text-cream-muted { color: var(--navy-mid); }
 .section-light .text-gold { color: var(--gold); }
 
-/* White section with decorative star background */
+/* Warm-linen section with decorative star background */
 .section-lavender {
-  background: #FFFFFF;
+  background: var(--cream) url('/textures/warm-linen.png') center/cover;
   color: var(--navy-dark);
   position: relative;
   overflow: hidden;
@@ -142,9 +151,9 @@ body {
 .section-lavender .text-cream { color: var(--navy-dark); }
 .section-lavender .text-cream-muted { color: var(--navy-mid); }
 
-/* White marble section */
+/* Antique-marble section */
 .section-marble {
-  background: #FFFFFF;
+  background: var(--cream) url('/textures/antique-marble.png') center/cover;
   color: var(--navy-dark);
   position: relative;
   overflow: hidden;
@@ -162,11 +171,11 @@ body {
 }
 
 .section-marble .text-cream { color: var(--navy-dark); }
-.section-marble .text-cream-muted { color: #666; }
+.section-marble .text-cream-muted { color: #6B5D4A; }
 
-/* White clouds section */
+/* Soft-clouds section */
 .section-clouds {
-  background: #FFFFFF;
+  background: var(--cream) url('/textures/soft-clouds.png') center/cover;
   color: var(--navy-dark);
   position: relative;
   overflow: hidden;
@@ -330,7 +339,7 @@ body {
   padding: 0.75rem 2rem;
   border-radius: 0.375rem;
   font-weight: 600;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display), Georgia, 'Times New Roman', serif;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-size: 0.875rem;
@@ -353,7 +362,7 @@ body {
   padding: 0.75rem 2rem;
   border-radius: 0.375rem;
   font-weight: 600;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display), Georgia, 'Times New Roman', serif;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-size: 0.875rem;

@@ -16,12 +16,24 @@ const PRICE_RANGES = [
 function ShopContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get("category") || "all";
+  const initialSort = searchParams.get("sort") || "featured";
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [selectedPriceRange, setSelectedPriceRange] = useState("all");
-  const [sortBy, setSortBy] = useState("featured");
+  const [sortBy, setSortBy] = useState(initialSort);
+  // Search comes in via the header search box and the megamenu "realm" links.
+  const [searchTerm, setSearchTerm] = useState(searchParams.get("search") || "");
 
   const filteredProducts = useMemo(() => {
     let filtered = products;
+
+    // Text search — matches name, description, and category so the header
+    // search box and the "Shop by Realm" nav links resolve to real results.
+    const q = searchTerm.trim().toLowerCase();
+    if (q) {
+      filtered = filtered.filter((p) =>
+        `${p.name} ${p.description} ${p.category}`.toLowerCase().includes(q)
+      );
+    }
 
     // Category filter
     if (selectedCategory !== "all") {
@@ -48,7 +60,11 @@ function ShopContent() {
         filtered = [...filtered].sort((a, b) => a.name.localeCompare(b.name));
         break;
       case "newest":
+      case "new":
         filtered = [...filtered].sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
+        break;
+      case "popular":
+        filtered = [...filtered].sort((a, b) => (b.isPopular ? 1 : 0) - (a.isPopular ? 1 : 0));
         break;
       case "featured":
       default:
@@ -57,7 +73,7 @@ function ShopContent() {
     }
 
     return filtered;
-  }, [selectedCategory, selectedPriceRange, sortBy]);
+  }, [searchTerm, selectedCategory, selectedPriceRange, sortBy]);
 
   return (
     <>
@@ -99,10 +115,26 @@ function ShopContent() {
           </div>
         </div>
 
+        {/* Active search chip */}
+        {searchTerm.trim() && (
+          <div className="mb-6">
+            <span className="inline-flex items-center gap-2 text-sm text-cream bg-navy-dark/40 border border-gold/30 rounded-full px-3 py-1.5">
+              Searching for &ldquo;<span className="text-gold">{searchTerm}</span>&rdquo;
+              <button
+                onClick={() => setSearchTerm("")}
+                className="text-cream-muted hover:text-gold transition-colors"
+                aria-label="Clear search"
+              >
+                &times;
+              </button>
+            </span>
+          </div>
+        )}
+
         {/* Sort & Results Row */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-4 border-t border-gold/20">
           <p className="text-cream-muted text-sm">
-            Showing <span className="text-gold font-semibold">{filteredProducts.length}</span> products
+            Showing <span className="text-gold font-semibold">{filteredProducts.length}</span> treasures
           </p>
           <div className="flex items-center gap-2">
             <label htmlFor="sort" className="text-cream-muted text-sm">Sort by:</label>
@@ -114,6 +146,7 @@ function ShopContent() {
             >
               <option value="featured">Featured</option>
               <option value="newest">Newest</option>
+              <option value="popular">Most Loved</option>
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
               <option value="name">Name A-Z</option>
@@ -136,19 +169,23 @@ function ShopContent() {
       </div>
 
       {filteredProducts.length === 0 && (
-        <div className="text-center py-12 animate-fade-in">
-          <span className="text-5xl mb-4 block">🔍</span>
-          <p className="text-cream-muted text-lg mb-2">
-            No products found matching your filters.
+        <div className="text-center py-16 animate-fade-in">
+          <span className="text-gold text-4xl mb-4 block">&#9734;</span>
+          <p className="text-cream text-lg mb-2 font-[family-name:var(--font-display)]">
+            No treasures found in this corner of the shop.
+          </p>
+          <p className="text-cream-muted mb-5">
+            Try a different search or wander back through the whole collection.
           </p>
           <button
             onClick={() => {
+              setSearchTerm("");
               setSelectedCategory("all");
               setSelectedPriceRange("all");
             }}
-            className="text-gold hover:underline"
+            className="btn-outline text-sm py-2 px-6"
           >
-            Clear all filters
+            Show All Treasures
           </button>
         </div>
       )}
@@ -183,17 +220,17 @@ export default function ShopPage() {
           <ShopContent />
         </Suspense>
 
-        {/* Etsy Coming Soon Notice */}
+        {/* Reserve a Treasure Notice */}
         <div className="mt-16 text-center card p-8 max-w-2xl mx-auto">
-          <h3 className="text-gold font-semibold text-lg mb-3">
-            Etsy Shop Coming Soon!
+          <h3 className="text-gold font-[family-name:var(--font-display)] text-2xl mb-3">
+            Reserve a Treasure
           </h3>
           <p className="text-cream-muted mb-4">
-            Our Etsy store is launching soon for easy online purchases. In the
-            meantime, you can request any item through our contact form.
+            Every piece is one of a kind and made by hand. Found something that
+            speaks to you? Send a note and Nicole will set it aside just for you.
           </p>
           <a href="/contact" className="btn-gold">
-            Contact for Orders
+            Reserve or Commission a Piece
           </a>
         </div>
       </div>

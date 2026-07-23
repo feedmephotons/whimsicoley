@@ -47,14 +47,13 @@ export default function MegaMenu({ isOpen, onClose, activeItem }: MegaMenuProps)
                         {/* Column 1: Shop Categories */}
                         <div className="col-span-3 border-r border-gold/10 pr-8">
                             <h3 className="text-gold font-serif text-lg mb-6 tracking-wide flex items-center gap-2">
-                                <span className="text-xl">✨</span> Collections
+                                <span className="text-xl">✨</span> Shop by Category
                             </h3>
                             <ul className="space-y-3">
                                 {[
-                                    { href: "/shop?category=jewelry", label: "Handcrafted Jewelry" },
-                                    { href: "/shop?category=suncatchers", label: "Suncatchers" },
-                                    { href: "/shop?category=home-decor", label: "Home Decor" },
-                                    { href: "/shop?category=seasonal", label: "Seasonal Treasures" },
+                                    { href: "/shop?category=jewelry", label: "Jewelry & Necklaces" },
+                                    { href: "/shop?category=earrings", label: "Earrings" },
+                                    { href: "/shop?category=keychains", label: "Keychains" },
                                     { href: "/shop", label: "View All Treasures", highlight: true },
                                 ].map((item) => (
                                     <li key={item.href}>
@@ -78,14 +77,14 @@ export default function MegaMenu({ isOpen, onClose, activeItem }: MegaMenuProps)
                         {/* Column 2: Themes & Moods */}
                         <div className="col-span-3 border-r border-gold/10 pr-8">
                             <h3 className="text-gold font-serif text-lg mb-6 tracking-wide flex items-center gap-2">
-                                <span className="text-xl">🌙</span> Shop by Realm
+                                <span className="text-xl">🌙</span> Our Collections
                             </h3>
                             <ul className="space-y-3">
                                 {[
-                                    { href: "/shop?search=celestial", label: "Celestial & Stars" },
-                                    { href: "/shop?search=botanical", label: "Botanical Garden" },
-                                    { href: "/shop?search=animal", label: "Whimsical Creatures" },
-                                    { href: "/shop?search=crystal", label: "Crystal Magic" },
+                                    { href: "/collections/celestial", label: "The Celestial Collection" },
+                                    { href: "/collections/pressed-garden", label: "The Pressed Garden" },
+                                    { href: "/collections/wishes-keepsakes", label: "Wishes & Keepsakes" },
+                                    { href: "/collections", label: "Browse All Collections" },
                                 ].map((item) => (
                                     <li key={item.href}>
                                         <Link

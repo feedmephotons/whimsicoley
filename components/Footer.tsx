@@ -6,8 +6,17 @@ export default function Footer() {
   return (
     <footer className="bg-navy-dark border-t border-gold/20">
       {/* Newsletter Section */}
-      <div className="section-cosmic py-16 px-4 sm:px-6 lg:px-8">
-        <Newsletter />
+      <div className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <Image
+          src="/branding/newsletter-cta-wish-bottle-band.png"
+          alt=""
+          fill
+          className="object-cover object-center pointer-events-none select-none"
+        />
+        <div className="absolute inset-0 bg-navy-dark/50 pointer-events-none" />
+        <div className="relative z-10">
+          <Newsletter />
+        </div>
       </div>
 
       {/* Main Footer */}
@@ -16,13 +25,22 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand */}
             <div className="col-span-1 md:col-span-2">
-              <Image
-                src="/logo.png"
-                alt="WhimsiColey"
-                width={180}
-                height={54}
-                className="h-12 w-auto mb-4"
-              />
+              <div className="flex items-center gap-3 mb-4">
+                <Image
+                  src="/branding/signature-emblem-moon-cradling-rose.png"
+                  alt=""
+                  width={44}
+                  height={44}
+                  className="h-11 w-11 object-contain"
+                />
+                <Image
+                  src="/logo.png"
+                  alt="WhimsiColey"
+                  width={180}
+                  height={54}
+                  className="h-12 w-auto"
+                />
+              </div>
               <p className="text-cream-muted text-sm max-w-md mb-4">
                 Handcrafted treasures for dreamers and stargazers. Each piece is
                 made with love, intention, and timeless care.
@@ -65,27 +83,27 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li>
                   <Link href="/shop" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
-                    All Products
+                    All Treasures
                   </Link>
                 </li>
                 <li>
                   <Link href="/shop?category=jewelry" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
-                    Jewelry
+                    Jewelry & Necklaces
                   </Link>
                 </li>
                 <li>
-                  <Link href="/shop?category=suncatchers" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
-                    Suncatchers
+                  <Link href="/shop?category=earrings" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
+                    Earrings
                   </Link>
                 </li>
                 <li>
-                  <Link href="/shop?category=home-decor" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
-                    Home Decor
+                  <Link href="/shop?category=keychains" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
+                    Keychains
                   </Link>
                 </li>
                 <li>
-                  <Link href="/shop?category=seasonal" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
-                    Seasonal
+                  <Link href="/shop?search=bottle" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
+                    Wishes in Glass
                   </Link>
                 </li>
               </ul>
@@ -116,9 +134,9 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
-                    Etsy Shop (Coming Soon)
-                  </a>
+                  <Link href="/contact" className="text-cream-muted hover:text-gold transition-colors text-sm link-animated">
+                    Reserve a Treasure
+                  </Link>
                 </li>
               </ul>
             </div>

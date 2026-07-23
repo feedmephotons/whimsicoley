@@ -60,7 +60,20 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="section-cosmic relative flex items-center justify-center" style={{ minHeight: 'calc(100vh - 100px)' }}>
+      <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: 'calc(100vh - 100px)' }}>
+        {/* Moonlit-garden apothecary hero art */}
+        <Image
+          src="/branding/hero-moonlit-garden-apothecary.png"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center pointer-events-none select-none"
+        />
+        {/* Legibility veil — keeps the open center readable without hiding the art */}
+        <div
+          className="absolute inset-0 pointer-events-none z-[1]"
+          style={{ background: 'radial-gradient(ellipse at center, rgba(21,14,46,0.55) 0%, rgba(21,14,46,0.25) 55%, rgba(21,14,46,0.15) 100%)' }}
+        />
         <SparkleCanvas />
         <ParallaxElements />
 
@@ -177,8 +190,8 @@ export default function Home() {
                 Welcome to Whimsicoley
               </h2>
               <p className="text-cream-muted mb-4">
-                Welcome to a world of handcrafted jewelry, light-catching suncatchers,
-                and treasures that hold a quiet kind of magic.
+                Welcome to a world of handcrafted jewelry, celestial keepsakes,
+                and little treasures that hold a quiet kind of magic.
               </p>
               <p className="text-cream-muted mb-6">
                 Inspired by nature, moonlight, and the beauty of small wonders, each
@@ -204,25 +217,29 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: "Jewelry", slug: "jewelry", icon: <MoonIcon />, desc: "Necklaces, earrings, rings & bracelets" },
-              { name: "Suncatchers", slug: "suncatchers", icon: <GentleStarIcon />, desc: "Crystal prisms & window art" },
-              { name: "Home Decor", slug: "home-decor", icon: <RoseIcon />, desc: "Coasters, dishes & accent pieces" },
-              { name: "Seasonal", slug: "seasonal", icon: <LeafIcon />, desc: "Holiday & seasonal collections" },
+              { name: "The Celestial Collection", href: "/collections/celestial", icon: <MoonIcon />, desc: "Galaxies, crescent moons & stardust captured in resin" },
+              { name: "The Pressed Garden", href: "/collections/pressed-garden", icon: <RoseIcon />, desc: "Real roses & pressed blooms preserved beneath glass" },
+              { name: "Wishes & Keepsakes", href: "/collections/wishes-keepsakes", icon: <GentleStarIcon />, desc: "Tiny corked bottles and little tokens of love" },
             ].map((category) => (
               <Link
-                key={category.slug}
-                href={`/shop?category=${category.slug}`}
-                className="card p-6 text-center group"
+                key={category.href}
+                href={category.href}
+                className="card p-8 text-center group"
               >
                 <span className="mb-4 block flex justify-center">{category.icon}</span>
-                <h3 className="text-navy-dark font-semibold group-hover:text-gold transition-colors">
+                <h3 className="font-[family-name:var(--font-display)] text-2xl text-navy-dark group-hover:text-gold transition-colors">
                   {category.name}
                 </h3>
                 <p className="text-navy-mid text-sm mt-2">{category.desc}</p>
               </Link>
             ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/collections" className="btn-outline">
+              Explore All Collections
+            </Link>
           </div>
         </div>
       </section>
@@ -254,6 +271,11 @@ export default function Home() {
             </p>
           </div>
           <ProcessTimeline />
+          <div className="text-center mt-12">
+            <Link href="/custom" className="btn-gold">
+              Start a Custom Treasure
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -267,7 +289,7 @@ export default function Home() {
             Every treasure begins as a spark of imagination. Share your vision,
             and together we&apos;ll bring it to life.
           </p>
-          <Link href="/contact" className="btn-gold text-lg animate-pulse-glow">
+          <Link href="/custom" className="btn-gold text-lg animate-pulse-glow">
             Begin Your Custom Order
           </Link>
         </div>

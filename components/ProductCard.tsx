@@ -5,15 +5,21 @@ import Link from "next/link";
 import { useState } from "react";
 import { useWishlist } from "@/hooks/useWishlist";
 
+export type CollectionId = "celestial" | "pressed-garden" | "wishes-keepsakes";
+
 export interface Product {
   id: string;
   slug: string;
   name: string;
   description: string;
   price: number;
-  category: "jewelry" | "suncatchers" | "home-decor" | "seasonal";
+  category: "jewelry" | "earrings" | "keychains";
   image: string;
   images?: string[];
+  collection?: CollectionId;
+  materials?: string;
+  dimensions?: string;
+  story?: string;
   featured?: boolean;
   isNew?: boolean;
   isPopular?: boolean;
