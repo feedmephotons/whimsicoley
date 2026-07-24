@@ -20,6 +20,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://whimsicoley.com"),
   title: "WhimsiColey | Handcrafted Treasures for Dreamers and Stargazers",
   description: "Discover handcrafted jewelry, suncatchers, and enchanting treasures inspired by nature, moonlight, and the art of timeless craftsmanship.",
   keywords: ["handmade jewelry", "custom jewelry", "suncatchers", "artisan jewelry", "handcrafted treasures", "vintage-inspired jewelry", "nature-inspired jewelry"],
