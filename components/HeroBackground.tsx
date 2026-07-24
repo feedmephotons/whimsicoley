@@ -4,8 +4,10 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const STILL = "/branding/hero-moonlit-garden-apothecary.png";
+// A flat wash sits the whole video back; the radial adds a little extra pool of
+// shade behind the centered logo + headline so they always have a foundation.
 const VEIL =
-  "radial-gradient(ellipse at center, rgba(21,14,46,0.55) 0%, rgba(21,14,46,0.25) 55%, rgba(21,14,46,0.15) 100%)";
+  "radial-gradient(ellipse at center, rgba(21,14,46,0.62) 0%, rgba(21,14,46,0.5) 55%, rgba(21,14,46,0.46) 100%), linear-gradient(rgba(21,14,46,0.28), rgba(21,14,46,0.28))";
 
 /**
  * Full-bleed hero backdrop that plays a looping Seedance cinematic by default,
