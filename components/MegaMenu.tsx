@@ -81,7 +81,7 @@ export default function MegaMenu({ isOpen, onClose, activeItem }: MegaMenuProps)
                             </h3>
                             <ul className="space-y-3">
                                 {[
-                                    { href: "/collections/celestial", label: "The Celestial Collection" },
+                                    { href: "/collections/sprinkled-in-stardust", label: "Sprinkled in Stardust" },
                                     { href: "/collections/pressed-garden", label: "The Pressed Garden" },
                                     { href: "/collections/wishes-keepsakes", label: "Wishes & Keepsakes" },
                                     { href: "/collections", label: "Browse All Collections" },

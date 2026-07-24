@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useWishlist } from "@/hooks/useWishlist";
 
-export type CollectionId = "celestial" | "pressed-garden" | "wishes-keepsakes";
+export type CollectionId = "sprinkled-in-stardust" | "pressed-garden" | "wishes-keepsakes";
 
 export interface Product {
   id: string;

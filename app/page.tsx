@@ -219,7 +219,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: "The Celestial Collection", href: "/collections/celestial", icon: <MoonIcon />, desc: "Galaxies, crescent moons & stardust captured in resin" },
+              { name: "Sprinkled in Stardust", href: "/collections/sprinkled-in-stardust", icon: <MoonIcon />, desc: "Galaxies, crescent moons & stardust captured in resin" },
               { name: "The Pressed Garden", href: "/collections/pressed-garden", icon: <RoseIcon />, desc: "Real roses & pressed blooms preserved beneath glass" },
               { name: "Wishes & Keepsakes", href: "/collections/wishes-keepsakes", icon: <GentleStarIcon />, desc: "Tiny corked bottles and little tokens of love" },
             ].map((category) => (
