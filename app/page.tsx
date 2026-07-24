@@ -4,6 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import { getFeaturedProducts } from "@/data/products";
 import ParallaxElements from "@/components/ParallaxElements";
 import SparkleCanvas from "@/components/SparkleCanvas";
+import HeroBackground from "@/components/HeroBackground";
 import Testimonials from "@/components/Testimonials";
 import ProcessTimeline from "@/components/ProcessTimeline";
 
@@ -61,19 +62,8 @@ export default function Home() {
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: 'calc(100vh - 100px)' }}>
-        {/* Moonlit-garden apothecary hero art */}
-        <Image
-          src="/branding/hero-moonlit-garden-apothecary.png"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center pointer-events-none select-none"
-        />
-        {/* Legibility veil — keeps the open center readable without hiding the art */}
-        <div
-          className="absolute inset-0 pointer-events-none z-[1]"
-          style={{ background: 'radial-gradient(ellipse at center, rgba(21,14,46,0.55) 0%, rgba(21,14,46,0.25) 55%, rgba(21,14,46,0.15) 100%)' }}
-        />
+        {/* Moonlit-garden hero — looping cinematic with static fallback + toggle */}
+        <HeroBackground />
         <SparkleCanvas />
         <ParallaxElements />
 
